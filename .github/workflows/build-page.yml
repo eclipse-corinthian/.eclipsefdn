@@ -27,8 +27,11 @@ jobs:
     if: ${{ !contains (github.repository, '/.eclipsefdn-template') }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout OtterDog
-        run: git clone https://gitlab.eclipse.org/eclipsefdn/security/otterdog.git
+      - name: Checkout eclipse-csi/otterdog
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          repository: eclipse-csi/otterdog
+          path: otterdog
 
       - name: Checkout EclipseFdn/otterdog-configs
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -76,7 +79,7 @@ jobs:
         working-directory: otterdog-configs
 
       - name: Upload generated site content
-        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         with:
           name: generated-site
           path: |
@@ -90,7 +93,7 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Download generated site content
-        uses: actions/download-artifact@f44cd7b40bfd40b6aa1cc1b9b5b7bf03d3c67110 # v4.1.0
+        uses: actions/download-artifact@6b208ae046db98c579e8a3aa621ab581ff575935 # v4.1.1
         with:
           name: generated-site
       - shell: bash
@@ -119,4 +122,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@f33f41b675f0ab2dc5a6863c9a170fe83af3571e # v4.0.0
+        uses: actions/deploy-pages@87c3283f01cd6fe19a0ab93a23b2f6fcba5a8e42 # v4.0.3
