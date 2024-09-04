@@ -7,5 +7,7 @@ orgs.newOrg('eclipse-corinthian') {
     web_commit_signoff_required: false,
   },
   _repositories+:: [
+    orgs.newRepo('Precedent_Docs') {
+    },
   ],
 }
