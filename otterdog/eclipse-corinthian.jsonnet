@@ -7,10 +7,7 @@ orgs.newOrg('eclipse-corinthian') {
     web_commit_signoff_required: false,
   },
   _repositories+:: [
-orgs.newRepo('.github') {
-      name: 'corinthian',
-      private: true,
-      default_branch: 'main',
+    orgs.newRepo('Precendent_Docs') {
     },
   ],
 }
