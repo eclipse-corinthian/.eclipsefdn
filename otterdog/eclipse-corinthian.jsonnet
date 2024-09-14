@@ -8,6 +8,8 @@ orgs.newOrg('eclipse-corinthian') {
   },
   _repositories+:: [
     orgs.newRepo('Precedent_Docs') {
+      description: "Legal Document Templates drafted by Eclipse Corinthian (NOT LEGAL ADVICE)",
+      homepage: "https://projects.eclipse.org/projects/technology.corinthian",
     },
   ],
 }
