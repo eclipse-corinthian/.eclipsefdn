@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-corinthian') {
+orgs.newOrg('technology.corinthian', 'eclipse-corinthian') {
   settings+: {
     description: "",
     name: "Corinthian project",
